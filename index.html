@@ -3,51 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fayawood Authenticity Check</title>
+    <title>Fayawood Authenticator</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
-
 <body>
+    <h1>Fayawood Authentication</h1>
+    <p>Each pack generates a unique verification code & QR stamp.</p>
 
-    <div id="ageGate" class="age-gate">
-        <div class="age-modal">
-            <h2>Are you 18 or older?</h2>
-            <button onclick="enterSite()">Yes, Enter</button>
-        </div>
+    <div class="container">
+        <div id="qr-display" class="qr-box"></div>
+        <p>Unique Code: <span id="qr-text"></span></p>
     </div>
 
-    <header>
-        <h1 class="logo">FAYAWOOD</h1>
-        <p class="subtitle">Verify. Trust. Enjoy.</p>
-    </header>
-
-    <section class="verify-box">
-        <h2>Authenticate Your Wrap</h2>
-        <p>Enter the batch code or scan the QR on your pack.</p>
-
-        <input type="text" id="codeInput" placeholder="Enter Code">
-        <button onclick="verifyCode()">Verify</button>
-
-        <p id="result"></p>
-    </section>
-
-    <section class="links">
-        <h3>Fayawood Links</h3>
-
-        <a href="#" target="_blank">Instagram (Fayawood)</a>
-        <a href="#" target="_blank">TikTok (Fayawood)</a>
-        <a href="#" target="_blank">Snapchat (Fayawood)</a>
-
-        <a href="#" target="_blank">Instagram (FAYA Brigade)</a>
-        <a href="#" target="_blank">Twitter (FAYA Brigade)</a>
-    </section>
-
-    <footer>
-        <p class="legal">
-            © 2025 Fayawood · Not for sale to persons under 18 · Tobacco use causes lung cancer.
-        </p>
-    </footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
