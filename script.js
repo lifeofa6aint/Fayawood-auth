@@ -1,23 +1,16 @@
-function enterSite() {
-    document.getElementById("ageGate").style.display = "none";
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const qrText = document.getElementById("qr-text");
+    const qrDisplay = document.getElementById("qr-display");
+    const encodedData = btoa("FAYAWOOD-UNIQUE-PACK-" + Date.now());
 
-function verifyCode() {
-    let input = document.getElementById("codeInput").value.trim();
-    let result = document.getElementById("result");
+    qrText.textContent = encodedData;
 
-    if (input.length < 3) {
-        result.style.color = "orange";
-        result.textContent = "Invalid code. Please check again.";
-        return;
-    }
-
-    // Placeholder: ALL codes starting with "FW" = authentic
-    if (input.startsWith("FW")) {
-        result.style.color = "#00e673";
-        result.textContent = "✔ Authentic Fayawood Wrap";
-    } else {
-        result.style.color = "#ff4747";
-        result.textContent = "✖ Counterfeit Alert! This is NOT an authentic Fayawood wrap.";
-    }
-}
+    new QRCode(qrDisplay, {
+        text: encodedData,
+        width: 180,
+        height: 180,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+    });
+});
